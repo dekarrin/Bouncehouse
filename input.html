@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+<head>
+<title>Bounce House</title>
+<meta name="description" content="Bounce houses, slides, obstacle courses and more!" />
+<meta name="keywords" content="bounce, house, jump, slide, moon bounce, obstacle course, moon walk, inflatable, bouncers, houses, Minnesota, Rogers, Corcoran, Dayton,
+Maple Grove, St. Michael, Hanover, Osseo, Otsego, Hassan, party" />
+
+<link rel="stylesheet" type="text/css" href="inputstyles.css" />
+
+</head>
+<body>
+
+<img class="logo" border="0" src="logo2.gif" alt="Bounce house logo" width="1335" height="235" />
+
+<h1>Bounce houses, slides, obstacle courses and MORE!</h1>
+
+<!-- move to inputstyles.css -->
+<!--navlist possible links -->
+<!--
+<style type="text/css">
+#navlist{position:relative;}
+#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
+#navlist li, #navlist a{height:80px;display:block;}
+
+#home{left:0px;width:1000px;}
+#home{background:url('links.jpg') 0 0;}
+
+#prev{left:63px;width:43px;}
+#prev{background:url('links.jpg') -140px 0;}
+
+#next{left:129px;width:43px;}
+#next{background:url('links.jpg') -281px 0;}
+</style>
+</head>
+
+<body>
+<ul id="navlist">
+<li id="home"><a href=""></a></li>
+<li id="prev"><a href=""></a></li>
+<li id="next"><a href=""></a></li>
+</ul>
+-->
+<!--change font to ariel -->
+
+<style type="text/css">
+ul
+{
+list-style-type:none;
+position:relative;
+left:360px;
+margin:0px 20px 40px 0px;
+padding:0;
+overflow:hidden;
+}
+li
+{
+float:left;
+}
+a:link,a:visited
+{
+display:block;
+width:160px;
+font-family:"arial";
+font-weight:bold;
+color:#FFFFFF;
+background-color:#888888;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+a:hover,a:active
+{
+background-color:#cccccc;
+}
+
+</style>
+
+<!-- CSS ends here -->
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#delivery">Delivery area</a></li>
+<li><a href="#contact">Contact us</a></li>
+<li><a href="#about us">about us</a><li>
+</ul>
+
+<img class="advert" border="1" src="tempad.gif" alt="Buy now! Prices starting as low as $15/hr!" width="200" height="300" />
+
+<!-- this is slideshow div 6 -->
+<!-- position slideshow -->
+<div class="slideshow">
+
+<script language="JavaScript1.2">
+<!--
+
+//Presentational Slideshow Script- By Dynamic Drive
+//For full source code and more DHTML scripts, visit http://www.dynamicdrive.com
+//This credit MUST stay intact for legal use
+
+var slideshow_width='700px' //SET SLIDESHOW WIDTH (set to largest image's width if multiple dimensions exist)
+var slideshow_height='500px' //SET SLIDESHOW HEIGHT (set to largest image's height if multiple dimensions exist)
+var pause=4000 //SET PAUSE BETWEEN SLIDE (2000=2 seconds)
+var slidebgcolor="black" //Make CLEAR or BG
+
+var dropimages=new Array()
+//SET IMAGE PATHS. Extend or contract array as needed
+dropimages[0]="1.gif"
+dropimages[1]="2.gif"
+dropimages[2]="3.gif"
+
+var droplinks=new Array()
+//SET IMAGE URLs. Use "" if you wish particular image to NOT be linked:
+droplinks[0]=""
+droplinks[1]=""
+droplinks[2]=""
+
+
+////NO need to edit beyond here/////////////
+
+var preloadedimages=new Array()
+for (p=0;p<dropimages.length;p++){
+preloadedimages[p]=new Image()
+preloadedimages[p].src=dropimages[p]
+}
+
+var ie4=document.all
+var dom=document.getElementById
+
+if (ie4||dom)
+document.write('<div style="position:relative;width:'+slideshow_width+';height:'+slideshow_height+';overflow:hidden"><div id="canvas0" style="position:absolute;width:'+slideshow_width+';height:'+slideshow_height+';background-color:'+slidebgcolor+';left:-'+slideshow_width+'"></div><div id="canvas1" style="position:absolute;width:'+slideshow_width+';height:'+slideshow_height+';background-color:'+slidebgcolor+';left:-'+slideshow_width+'"></div></div>')
+else
+document.write('<a href="javascript:rotatelink()"><img name="defaultslide" src="'+dropimages[0]+'" border=0></a>')
+
+var curpos=parseInt(slideshow_width)*(-1)
+var degree=10
+var curcanvas="canvas0"
+var curimageindex=linkindex=0
+var nextimageindex=1
+
+
+function movepic(){
+if (curpos<0){
+curpos=Math.min(curpos+degree,0)
+tempobj.style.left=curpos+"px"
+}
+else{
+
+clearInterval(dropslide)
+nextcanvas=(curcanvas=="canvas0")? "canvas0" : "canvas1"
+tempobj=ie4? eval("document.all."+nextcanvas) : document.getElementById(nextcanvas)
+var slideimage='<img src="'+dropimages[curimageindex]+'" border=0>'
+tempobj.innerHTML=(droplinks[curimageindex]!="")? '<a href="'+droplinks[curimageindex]+'">'+slideimage+'</a>' : slideimage
+nextimageindex=(nextimageindex<dropimages.length-1)? nextimageindex+1 : 0
+setTimeout("rotateimage()",pause)
+}
+}
+
+function rotateimage(){
+if (ie4||dom){
+resetit(curcanvas)
+var crossobj=tempobj=ie4? eval("document.all."+curcanvas) : document.getElementById(curcanvas)
+crossobj.style.zIndex++
+var temp='setInterval("movepic()",50)'
+dropslide=eval(temp)
+curcanvas=(curcanvas=="canvas0")? "canvas1" : "canvas0"
+}
+else
+document.images.defaultslide.src=dropimages[curimageindex]
+linkindex=curimageindex
+curimageindex=(curimageindex<dropimages.length-1)? curimageindex+1 : 0
+}
+
+function rotatelink(){
+if (droplinks[linkindex]!="")
+window.location=droplinks[linkindex]
+}
+
+function resetit(what){
+curpos=parseInt(slideshow_width)*(-1)
+var crossobj=ie4? eval("document.all."+what) : document.getElementById(what)
+crossobj.style.left=curpos+"px"
+}
+
+function startit(){
+var crossobj=ie4? eval("document.all."+curcanvas) : document.getElementById(curcanvas)
+crossobj.innerHTML='<a href="'+droplinks[curimageindex]+'"><img src="'+dropimages[curimageindex]+'" border=0></a>'
+rotateimage()
+}
+
+if (ie4||dom)
+window.onload=startit
+else
+setInterval("rotateimage()",pause)
+//-->
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript> <!--Picture url here (single) -->
+<!--
+<br />
+
+<img class="social" border="0" src="fttemp.gif" alt="Social network links" width="200" height="100" />
+-->
