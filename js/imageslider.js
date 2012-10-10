@@ -216,8 +216,9 @@ function setSliderStyle(sliderDiv) {
 }
 
 function preloadImages() {
-	var img = new Image();
+	var imgs = new Array();
 	for(var i = 0; i < picSources.length; i++) {
-		img.src = picSources[i];
+		imgs[i] = new Image();
+		imgs[i].src = picSources[i];
 	}
 }
